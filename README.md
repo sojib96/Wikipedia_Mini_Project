@@ -89,6 +89,6 @@ This is a mini project that automates the user interface (UI) of Wikipedia. It c
 2. Run the test using Maven:
 
     ```bash
-    mvn test -Dbrowserstack.username="Your browserstack username " -Dbrowserstack.accessKey=" Your browserstack accessKey"
+    mvn test -DbrowserstackUsername="Your browserstack username " -DbrowserstackAccessKey=" Your browserstack accessKey"
    ```
 
