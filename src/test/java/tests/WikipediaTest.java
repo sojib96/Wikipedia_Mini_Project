@@ -1,7 +1,6 @@
 package tests;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import pages.DownloadPage;
 import pages.SearchResultPage;
@@ -13,14 +12,10 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 
-import java.io.File;
-
-import static aquality.selenium.browser.AqualityServices.getBrowser;
 
 public class WikipediaTest extends BaseTest {
     private final SearchResultPage searchResultPage = new SearchResultPage();
     private final DownloadPage downloadPage = new DownloadPage();
-    private File downloadedFile;
 
     @Test(description = "Test search functionality for {0}", dataProvider = "inputStringData", dataProviderClass = SettingsTestData.class)
     @Feature("Search Functionality")
@@ -33,13 +28,8 @@ public class WikipediaTest extends BaseTest {
         searchResultPage.clickToolMenuButton();
         searchResultPage.clickDownloadLink();
         downloadPage.clickDownloadButton();
-        downloadedFile = new File(getBrowser().getDownloadDirectory() + File.separator + downloadPage.getFileName());
-        Assert.assertTrue(FileUtils.isFileExist(downloadedFile), "File does not exist!");
-    }
-
-    @AfterMethod
-    public void deleteFile() {
-        FileUtils.deleteFileIfExist(downloadedFile);
+        String fileName = downloadPage.getFileName();
+        Assert.assertTrue(FileUtils.isFileExist(fileName), "File does not exist!");
     }
 }
 
