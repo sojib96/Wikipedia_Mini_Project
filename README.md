@@ -69,13 +69,6 @@ This is a mini project that automates the user interface (UI) of Wikipedia. It c
 
 2. Open the project in your preferred IDE.
 
-3. Install project dependencies by running:
-
-    ```bash
-    mvn install
-    ```
-
-4. Configure BrowserStack credentials in your test code (BrowserStack username and access key).
 
 
 ### Running the Tests Locally
