@@ -92,3 +92,62 @@ This is a mini project that automates the user interface (UI) of Wikipedia. It c
     mvn test -DbrowserstackUsername="Your browserstack username " -DbrowserstackAccessKey=" Your browserstack accessKey"
    ```
 
+### Generating the Allure Report
+
+1. Navigate to the `target` directory:
+
+    ```bash
+    cd target
+    ```
+
+2. Serve the Allure report:
+
+    ```bash
+    allure serve 
+    ```
+
+### Running Tests in Docker
+
+1. Build the Docker image with the following command:
+
+    ```bash
+    docker build -t wikipedia-mini-project .
+    ```
+
+2. Run the container in interactive mode, mapping port 9090 (or another port of your choice):
+
+    ```bash
+    docker run -it -p 9090:9090 wikipedia-mini-project bash
+    ```
+
+3. This above command will open a Bash shell inside the Docker container. Once inside the container, clean the project using Maven:
+
+    ```bash
+    mvn clean
+    ```
+
+   Run the tests with the necessary BrowserStack credentials:
+
+    ```bash
+    mvn test -DbrowserstackUsername="Your browserstack username" -DbrowserstackAccessKey="Your browserstack accessKey"
+    ```
+
+4. After the tests have completed, navigate to the `target` directory:
+
+    ```bash
+    cd target
+    ```
+   Then, serve the Allure report:
+
+    ```bash
+    allure serve --port 9090
+    ```
+
+
+5. Open `http://localhost:9090` in your web browser to view the Allure report.
+
+## Conclusion
+
+This project demonstrates the automation of Wikipedia's user interface with cross-browser testing, data-driven testing, and continuous integration using tools like Selenium, BrowserStack, Docker, and Jenkins. The setup ensures consistent testing across different browsers and provides detailed insights into test execution through Allure reports, promoting a robust and scalable automation framework.
+
+   
