@@ -63,7 +63,7 @@ This is a mini project that automates the user interface (UI) of Wikipedia. It c
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/Wikipedia_Mini_Project.git
+    git clone https://github.com/sojib96/Wikipedia_Mini_Project.git
     cd Wikipedia_Mini_Project
     ```
 
